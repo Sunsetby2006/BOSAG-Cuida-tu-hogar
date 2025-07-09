@@ -73,62 +73,78 @@
         .service-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 24px;
+            gap: 16px;
+            justify-content: center;
         }
 
         .service {
-            flex: 1 1 300px;
+            flex: 1 1 280px;
+            max-width: 300px;
             padding: 16px;
-            border: 1px solid var(--github-border);
             border-radius: 10px;
             text-align: center;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: transform 0.3s;
             cursor: pointer;
             height: 370px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .service:hover {
             transform: scale(1.02);
-        }
-
-        .service img {
-            max-height: 200px;
-            width: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-            transition: filter 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .service h3 {
-            margin: 8px 0;
+            margin: 0;
+            padding: 8px 0;
+            color: #24262b;
+            font-size: 1.2rem;
+        }
+
+        .service-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .service img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: filter 0.3s ease;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .service p {
+            padding: 8px 0;
+            color: #24262b;
         }
 
         .jardineria {
             background-color: var(--bosag-green);
-            color: var(--bosag-green);
         }
 
         .pintura {
             background-color: var(--bosag-gold);
-            color: var(--bosag-gold);
         }
 
         .impermeabilizante {
             background-color: var(--bosag-blue);
-            color: var(--bosag-blue);
         }
 
         .seguridad {
             background-color: var(--bosag-security);
-            color: var(--bosag-security);
         }
 
         .otros {
             background-color: var(--bosag-other);
-            color: var(--bosag-other);
         }
 
         footer {
@@ -140,8 +156,9 @@
         }
 
         @media (max-width: 768px) {
-            .service-buttons {
-                flex-direction: column;
+            .service {
+                flex: 1 1 100%;
+                max-width: 100%;
             }
         }
     </style>
@@ -170,24 +187,34 @@
             <h2 class="section-title">Nuestros Servicios</h2>
             <div class="service-buttons">
                 <div class="service jardineria" onmouseover="changeHue(this, 'green')" onmouseout="resetHue(this)">
-                    <h3>Jardinería</h3>
-                    <img src="https://github.com/Sunsetby2006/BOSAG-Cuida-tu-hogar/blob/main/fotos/jardineria.jpg?raw=true" alt="Jardinería">
+                    <div class="service-content">
+                        <h3>Jardinería</h3>
+                        <img src="https://github.com/Sunsetby2006/BOSAG-Cuida-tu-hogar/blob/main/fotos/jardineria.jpg?raw=true" alt="Jardinería">
+                    </div>
                 </div>
                 <div class="service pintura" onmouseover="changeHue(this, 'gold')" onmouseout="resetHue(this)">
-                    <h3>Pintura</h3>
-                    <img src="https://github.com/Sunsetby2006/BOSAG-Cuida-tu-hogar/blob/main/fotos/pintura.jpg?raw=true" alt="Pintura">
+                    <div class="service-content">
+                        <h3>Pintura</h3>
+                        <img src="https://github.com/Sunsetby2006/BOSAG-Cuida-tu-hogar/blob/main/fotos/pintura.jpg?raw=true" alt="Pintura">
+                    </div>
                 </div>
                 <div class="service impermeabilizante" onmouseover="changeHue(this, 'blue')" onmouseout="resetHue(this)">
-                    <h3>Impermeabilización</h3>
-                    <img src="https://github.com/Sunsetby2006/BOSAG-Cuida-tu-hogar/blob/main/fotos/impermeabilizante.jpg?raw=true" alt="Impermeabilizante">
+                    <div class="service-content">
+                        <h3>Impermeabilización</h3>
+                        <img src="https://github.com/Sunsetby2006/BOSAG-Cuida-tu-hogar/blob/main/fotos/impermeabilizante.jpg?raw=true" alt="Impermeabilizante">
+                    </div>
                 </div>
                 <div class="service seguridad" onmouseover="changeHue(this, 'security')" onmouseout="resetHue(this)">
-                    <h3>Sistemas de Seguridad</h3>
-                    <img src="https://github.com/Sunsetby2006/BOSAG-Cuida-tu-hogar/blob/main/fotos/seguridad.jpg?raw=true" alt="Seguridad">
+                    <div class="service-content">
+                        <h3>Sistemas de Seguridad</h3>
+                        <img src="https://github.com/Sunsetby2006/BOSAG-Cuida-tu-hogar/blob/main/fotos/seguridad.jpg?raw=true" alt="Seguridad">
+                    </div>
                 </div>
                 <div class="service otros" onmouseover="changeHue(this, 'other')" onmouseout="resetHue(this)">
-                    <h3>Otros Servicios</h3>
-                    <img src="https://github.com/Sunsetby2006/BOSAG-Cuida-tu-hogar/blob/main/fotos/otros.jpg?raw=true" alt="Otros">
+                    <div class="service-content">
+                        <h3>Otros Servicios</h3>
+                        <img src="https://github.com/Sunsetby2006/BOSAG-Cuida-tu-hogar/blob/main/fotos/otros.jpg?raw=true" alt="Otros">
+                    </div>
                 </div>
             </div>
         </section>
